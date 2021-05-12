@@ -23,7 +23,6 @@ const Collection = ({navigation}) => {
           contentContainerStyle={{padding: 10}}
           separatorWidth={15}
           width={WIDTH * 0.93}
-          indicatorActiveWidth={30}
           height={WIDTH * 1.2}
           indicator={true}
           indicatorInActiveColor="#aaa"
