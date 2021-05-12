@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     paddingHorizontal: 10,
     paddingTop: 25,
-    height: HEIGHT * 0.3,
+    height: 250,
   },
 });

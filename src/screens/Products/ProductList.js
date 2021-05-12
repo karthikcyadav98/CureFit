@@ -7,6 +7,7 @@ import {
   Image,
   StyleSheet,
   Platform,
+  SafeAreaView,
 } from 'react-native';
 import {productData} from '../../common/StaticData';
 import {FAB} from 'react-native-paper';
@@ -17,32 +18,34 @@ const WIDTH = Dimensions.get('window').width;
 
 const ProductList = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        numColumns="2"
-        keyExtractor={item => item.key}
-        data={productData}
-        renderItem={({item}) => (
-          <ProductItem navigation={navigation} item={item} />
-        )}
-      />
-      <FAB
-        style={styles.fab}
-        color="#fff"
-        label="FILTERS"
-        icon={() => (
-          <Icon color="#fff" style={styles.filterIcon} name="equalizer" />
-        )}
-      />
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          numColumns="2"
+          keyExtractor={item => item.key}
+          data={productData}
+          renderItem={({item}) => (
+            <ProductItem navigation={navigation} item={item} />
+          )}
+        />
+        <FAB
+          style={styles.fab}
+          color="#fff"
+          label="FILTERS"
+          icon={() => (
+            <Icon color="#fff" style={styles.filterIcon} name="equalizer" />
+          )}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
 export default ProductList;
 
 const styles = StyleSheet.create({
-  container: {padding: 15, marginBottom: Platform.OS === 'ios' ? 90 : 0},
+  container: {padding: 15, marginBottom: 50},
   row: {flexDirection: 'row', alignItems: 'center'},
   fab: {
     height: 40,

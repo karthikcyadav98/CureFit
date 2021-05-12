@@ -30,7 +30,7 @@ const Collection = ({navigation}) => {
           indicatorActiveColor="#000"
           indicatorActiveWidth={8}
           animation={true}
-          autoscroll={false}
+          autoscroll={true}
           data={collection}
         />
       </View>
